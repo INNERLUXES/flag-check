@@ -1,0 +1,47 @@
+{
+  "name": "flag-check",
+  "version": "1.0.0",
+  "description": "Check a flagd (OpenFeature) flag file: every flag valid, with an owner and a removal date that has not passed, no flag left on for everyone or switched off for good, and no flag the code evaluates without a definition. Reads files, fetches nothing, no dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "flag-check": "bin/flag-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "feature-flags",
+    "feature-toggles",
+    "openfeature",
+    "flagd",
+    "saas",
+    "technical-debt",
+    "release",
+    "cli"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/flag-check.git"
+  },
+  "homepage": "https://innerluxes.dev/software-development/saas/enhancement"
+}
