@@ -1,0 +1,46 @@
+{
+  "$schema": "https://flagd.dev/schema/v0/flags.json",
+  "metadata": {
+    "owner": "platform-team"
+  },
+  "$evaluators": {
+    "beta-customers": {
+      "in": [{ "var": "tenant" }, ["acme", "globex"]]
+    }
+  },
+  "flags": {
+    "new-billing-page": {
+      "state": "ENABLED",
+      "variants": { "on": true, "off": false },
+      "defaultVariant": "off",
+      "targeting": { "if": [{ "$ref": "beta-customers" }, "on", "off"] },
+      "metadata": { "owner": "billing-team", "expires": "2099-12-31" }
+    },
+    "faster-search": {
+      "state": "ENABLED",
+      "variants": { "on": true, "off": false },
+      "defaultVariant": "on",
+      "metadata": { "expires": "2099-06-30" }
+    },
+    "report-export": {
+      "state": "ENABLED",
+      "variants": { "csv": "csv", "xlsx": "xlsx" },
+      "defaultVariant": "csv",
+      "targeting": { "if": [{ "$ref": "enterprise-plans" }, "xlsx", "csv"] },
+      "metadata": { "expires": "2020-01-31" }
+    },
+    "old-dashboard": {
+      "state": "DISABLED",
+      "variants": { "on": true, "off": false },
+      "defaultVariant": "off",
+      "metadata": { "expires": "2099-01-31" }
+    },
+    "chat-assistant": {
+      "state": "ENABLED",
+      "variants": { "on": true, "off": "no" },
+      "defaultVariant": "off",
+      "targeting": { "fractional": [["on", 10], ["off", 90]] },
+      "metadata": { "expires": "soon" }
+    }
+  }
+}
