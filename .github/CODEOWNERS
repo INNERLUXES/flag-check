@@ -1,0 +1,7 @@
+# Every change is reviewed by a maintainer.
+* @innerluxesdev
+
+# The flag reader, the checks and the source scan decide every finding the tool prints; changes need extra care.
+/src/flags.js @innerluxesdev
+/src/checks.js @innerluxesdev
+/src/scan.js @innerluxesdev
